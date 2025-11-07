@@ -67,6 +67,8 @@ button{
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
 }
 
 header {
@@ -307,21 +309,11 @@ header a:hover {
 }
 
 
-.home2 {
-    margin-top: 2rem;
-    border: 1px solid rgb(82, 80, 80);
+.home2 .meena{
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    width: 28%;
-    height: 50vh;
-    background: url(meena.jpg) no-repeat center;
-    object-fit: cover;
-    background-size: 100% 50vh;
-    box-shadow: 10px 10px 30px rgba(104, 103, 103, .8);
-    animation: zoomIn 0.9s ease forwards;
-    animation-delay: 0.3s;
-    transform: scale(0.8);
-    opacity: 0;
-
+    margin: 20px;
 }
 
 /* Home Page -End */
@@ -329,7 +321,6 @@ header a:hover {
 /* About Page -Start */
 
 #about {
-    /* border: 1px solid; */
     background: url(portfolio5.avif) no-repeat center;
     width: 100%;
     background-size: cover;
@@ -349,7 +340,6 @@ header a:hover {
 }
 
 .about1 {
-    /* border: 1px solid; */
     display: flex;
     justify-content: space-between;
     padding: 2%;
@@ -357,7 +347,6 @@ header a:hover {
 }
 
 .about-lft {
-    /* border: 1px solid; */
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -373,6 +362,7 @@ header a:hover {
     border-radius: 20px;
     padding: 20px;
     background-color: rgb(212, 208, 208);
+    transition: all 0.4s;
 }
 
 .certificate {
@@ -382,11 +372,10 @@ header a:hover {
     border-radius: 20px;
     padding: 20px;
     background-color: rgb(212, 208, 208);
-
+    transition: all 0.4s;
 }
 
 .about-rgt {
-    /* border: 1px solid; */
     width: 39%;
     border-radius: 20px;
     padding: 15px 10px 0px 20px;
@@ -399,7 +388,6 @@ header a:hover {
 }
 
 .education {
-    /* border: 1px solid; */
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -487,6 +475,7 @@ header a:hover {
     width: 97%;
     padding: 30px;
     border-radius: 20px;
+    gap: 30px;
 }
 
 .analysis {
@@ -506,6 +495,13 @@ header a:hover {
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+}
+
+.sbox-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .s-box p {
@@ -803,6 +799,7 @@ header a:hover {
     background-color: transparent;
     color: black;
     border: 1px solid;
+    transition: 1s all;
 }
 
 .btn:hover {
@@ -827,38 +824,11 @@ header a:hover {
 
 /* -----------------Media Query -Start-------------------*/
 
-@media (max-width:1200px) {
-
-    .home2 {
-        width: 30%;
-        height: 31vh;
-        background: url(meena.jpg) no-repeat center;
-        object-fit: cover;
-        background-size: 100% 31vh;
-        box-shadow: 10px 10px 30px rgba(104, 103, 103, .8);
-    }
-
-    .skill-tech {
-        border: 1px solid;
-        gap: 30px;
-    }
-}
-
 @media (max-width:800px) {
 
     /* Header -Start */
     #home {
         padding: 0px;
-    }
-
-    .home2 {
-        border: 1px solid rgb(82, 80, 80);
-        border-radius: 50%;
-        width: 75%;
-        padding: 0px;
-        height: 38vh;
-        background: url(meena.jpg) no-repeat center;
-        background-size: 100% 40vh;
     }
 
     header {
@@ -919,10 +889,6 @@ header a:hover {
         margin: auto;
     }
 
-    .home2 {
-        width: 50%;
-    }
-
     #about {
         width: 100%;
     }
@@ -931,7 +897,6 @@ header a:hover {
         display: flex;
         flex-direction: column;
         padding: 0px 0px 25px 0px;
-        border: 1px solid;
         width: 85%;
     }
 
@@ -970,16 +935,21 @@ header a:hover {
     }
 }
 
-@media(max-width:766px) {
-    .skill-tech {
-        border: 1px solid;
-        padding: 25px;
+@media (max-width:700px) {
+    .sbox-container{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sbox-container .s-box{
+        width: 300px;
     }
 }
 
+
 @media (max-width:560px) {
     .home {
-        /* border: 1px solid wheat; */
         width: 96%;
     }
 
@@ -1001,6 +971,10 @@ header a:hover {
 
     .about-head a {
         font-size: 25px;
+    }
+
+    .skill-box {
+        flex-direction: column;
     }
 }
 
@@ -1025,21 +999,9 @@ header a:hover {
 }
 
 @media (max-width:450px) {
-    .home2 {
-        width: 80%;
-    }
 
     .about-head a {
         font-size: 23px;
-    }
-
-    .home2 {
-        border: 1px solid rgb(82, 80, 80);
-        border-radius: 50%;
-        width: 230px;
-        height: 32vh;
-        background: url(meena.jpg) no-repeat center;
-        background-size: 100% 32vh;
     }
 
     .edu {
@@ -1066,15 +1028,7 @@ header a:hover {
 }
 
 @media (max-width:970px) {
-    .home2 {
-        border: 1px solid rgb(82, 80, 80);
-        border-radius: 50%;
-        width: 250px;
-        height: 33vh;
-        background: url(meena.jpg) no-repeat center;
-        background-size: 100% 33vh;
-    }
-
+    
     .about1 {
         display: flex;
         flex-direction: column;
